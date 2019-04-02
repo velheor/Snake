@@ -77,8 +77,10 @@ void Draw()
 	cout << "Score: " << score << endl;
 	Sleep(100);
 }
+
 void Input() 
 {
+	//а?
 	if (_kbhit()) {
 		switch (_getch())
 		{
@@ -97,27 +99,6 @@ void Input()
 		case 'w':
 			if (dir != DOWN)
 				dir = UP;
-			break;
-		case 'x':
-			gameOver = true;
-			break;
-		}
-	}
-	if (_kbhit())
-	{
-		switch (_getch())
-		{
-		case 'a':
-			dir = LEFT;
-			break;
-		case 'd':
-			dir = RIGHT;
-			break;
-		case 'w':
-			dir = UP;
-			break;
-		case 's':
-			dir = DOWN;
 			break;
 		case 'x':
 			gameOver = true;
@@ -171,13 +152,13 @@ void Logic()
 	{
 		x = width - 2;
 	}
-	if (y >= height-1)
+	if (y >= height)
 	{
 		y = 0;
 	}
 	else if (y < 0)
 	{
-		y = height - 1;
+		y = height - 2;
 	}
 
 	for (int i = 0; i < nTail; i++)
